@@ -1,0 +1,204 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100vh;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+#controlPanel {
+    width: 500px;
+    height: 140px;
+    bottom: 20px;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    font-family: sans-serif;
+    color: white;
+    position: relative;
+    /* Add smooth transitions */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#controlPanel.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    opacity: 0.5;
+}
+
+.button.active {
+    opacity: 1;
+}
+
+.knob-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.rotary-knob {
+    width: 80px;
+    height: 80px;
+    background-color: #2a2a2a;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #141414;
+}
+
+.knob-line {
+    width: 10px;
+    height: 40px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: bottom center;
+    margin-top: -40px;
+    border-radius: 10px;
+}
+
+.knob-line-indicator {
+    width: 20%;
+    height: 70%;
+    background-color: #b8b7b7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.knob-value {
+    position: absolute;
+    bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.knob-option {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    color: #bbb;
+    white-space: nowrap;
+    transform-origin: center;
+    pointer-events: none;
+}
+
+.knob-option.off {
+    transform: translate(-50%, -50%) rotate(90deg) translate(60px) rotate(-90deg);
+}
+.knob-option.one {
+    transform: translate(-50%, -50%) rotate(180deg) translate(60px) rotate(-180deg);
+}
+.knob-option.two {
+    transform: translate(-50%, -50%) rotate(225deg) translate(60px) rotate(-225deg);
+}
+.knob-option.three {
+    transform: translate(-50%, -50%) rotate(270deg) translate(60px) rotate(-270deg);
+}
+.knob-option.four {
+    transform: translate(-50%, -50%) rotate(315deg) translate(60px) rotate(-315deg);
+}
+.knob-option.five {
+    transform: translate(-50%, -50%) rotate(0deg) translate(60px) rotate(0deg);
+}
+
+.knob-option.active {
+    color: white;
+}
+
+.indicator-button {
+    background-color: rgb(71, 71, 71);
+}
+
+.indicator-arrows {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 8px;
+    gap: 5px;
+}
+
+.indicator-left,
+.indicator-right {
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+.indicator-left.active,
+.indicator-right.active {
+    color: #ff3c00;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+}
+
+.indicator-left.blinking,
+.indicator-right.blinking {
+    animation: blink 1s steps(1, end) infinite;
+}

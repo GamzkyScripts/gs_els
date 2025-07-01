@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ELS Control Panel</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    </head>
+
+    <body>
+        <div id="controlPanel">
+            <div class="main-content">
+                <div class="button-grid">
+                    <button class="button" data-action="1"></button>
+                    <button class="button" data-action="2"></button>
+                    <button class="button" data-action="3"></button>
+                    <button class="button" data-action="4"></button>
+                    <button class="button" data-action="5"></button>
+
+                    <button class="button" data-action="6"></button>
+                    <button class="button" data-action="7"></button>
+                    <button class="button" data-action="8"></button>
+                    <button class="button" data-action="9"></button>
+                    <button class="button indicator-button" data-action="10">
+                        <div class="indicator-arrows">
+                            <i class="fa-solid fa-arrow-left indicator-left"></i>
+                            <i class="fa-solid fa-arrow-right indicator-right"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="knob-container">
+                    <div class="rotary-knob">
+                        <div class="knob"></div>
+                        <div class="knob-line">
+                            <div class="knob-line-indicator"></div>
+                        </div>
+                    </div>
+                    <div class="knob-option off">OFF</div>
+                    <div class="knob-option one">1</div>
+                    <div class="knob-option two">2</div>
+                    <div class="knob-option three">3</div>
+                    <div class="knob-option four">4</div>
+                    <div class="knob-option five">5</div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
