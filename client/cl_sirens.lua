@@ -71,7 +71,7 @@ AddStateBagChangeHandler('siren', nil, function(bagName, key, sirenIndex)
 
     -- Play the siren
     local soundId = GetSoundId()
-    PlaySoundFromEntity(soundId, audioName, vehicle, 0, 0, 0)
+    PlaySoundFromEntity(soundId, audioName, vehicle, audioRef, 0, 0)
 
     -- Wait until the siren is turned off
     while (CanVehicleHaveLightsOrSirens(vehicle) and Entity(vehicle).state.siren == sirenIndex) do
