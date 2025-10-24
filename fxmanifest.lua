@@ -3,7 +3,7 @@ games { 'gta5' }
 
 author 'Eviate'
 description 'Emergency Light System'
-version '1.0.1'
+version '1.0.2'
 
 lua54 'yes'
 

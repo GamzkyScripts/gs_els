@@ -56,7 +56,8 @@ Config.DayTimeIntensityMultiplier = 100.0
 -- The intensity multiplier for the lights during the night
 Config.NightTimeIntensityMultiplier = 5.0
 
--- If you use custom sirens, you need to add all the audio banks you use to this table
+-- If you use custom sirens, you need to add all the audio banks you use to this table.
+-- You can find more information on the use of custom sirens, in the readme file.
 Config.AudioBanks = {
     -- 'DLC_WMSIRENS\\SIRENPACK_ONE',
 }

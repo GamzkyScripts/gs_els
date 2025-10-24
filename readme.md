@@ -18,3 +18,38 @@ There are quite a lot of ELS-variants available these days, mostly paid versions
 - Hazard and indicator lights are also included and fully synchronized.
 - Supports custom (server-sided) sirens.
 - Supports key-mapping, allowing individual players to customize keybindings.
+
+
+## How to use custom sirens?
+You will need a script to stream custom sirens first. I will walk through the configuration of gs_els for two scripts.
+
+### [Walsheyy WMServerSirens](https://github.com/Walsheyy/WMServerSirens)
+1. First be sure the script is installed to your server and running.
+2. In `gs_els/config.lua`, configure the following AudioBank:
+```lua
+Config.AudioBanks = {
+  'DLC_WMSIRENS\\SIRENPACK_ONE',
+}
+```
+3. A custom siren can then be configure in `vehicles.lua` by:
+```lua
+Sirens = {
+  [1] = { audioName = 'siren_alpha', audioRef = 'DLC_WMSIRENS_SOUNDSET' },
+},
+```
+
+### [fk-1997 Server-Sided-Sounds-and-Sirens](https://github.com/fk-1997/Server-Sided-Sounds-and-Sirens)
+1. First be sure the script is installed to your server and running.
+2. In `gs_els/config.lua`, configure the following AudioBank:
+```lua
+Config.AudioBanks = {
+  'DLC_SERVERSIDEAUDIO\\OISS_SSA_VEHAUD_BCSO_NEW',
+}
+```
+3. A custom siren can then be configure in `vehicles.lua` by:
+```lua
+Sirens = {
+  [1] = { audioName = 'oiss_ssa_vehaud_lssd_new_siren_adam', audioRef = 'oiss_ssa_vehaud_lssd_new_soundset' },
+},
+```
+4. Other sirens in this script use different settings which can be found [here](https://github.com/fk-1997/Server-Sided-Sounds-and-Sirens/blob/main/IDTABLE.md#table-with-soundbank-soundset-and-audiostring). The naming in this document is slightly different, `SoundBank` is the same as `AudioBank`, `SoundSet` is the same as `audioRef` & `AudioString` is the same as `audioName`.
